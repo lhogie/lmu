@@ -1,0 +1,39 @@
+# This is an example LMU code, just to show you how to write a model.
+# A good place to start is to modify this model to write yours.
+
+entity ShapedObject
+	has 1 Shape by composition shape
+
+entity Driver
+
+entity Car
+	features private attribute maxSpeed of type double
+	features public operation accelerate of type boolean expecting int int
+	extends ShapedObject
+	has 4 Wheel by aggregation
+	has 1 Driver by association
+	color lightgrey
+
+
+
+entity Tire
+
+entity Wheel
+	features public operation accept of type boolean expecting Tire
+	extends ShapedObject
+
+entity Shape
+	features public operation getVolume of type double
+
+entity RoundShape
+	features private attribute diameter of type double
+	extends Shape
+
+entity CarShape
+	extends Shape
+
+group shaping grey .*Shape.*
+group parts grey  Wheel Tire 
+
+
+

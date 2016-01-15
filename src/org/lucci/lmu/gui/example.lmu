@@ -1,0 +1,33 @@
+
+
+Bike extends WheeledVehicle
+
+Boat extends Vehicle
+Boat has 1 Engine by composition 
+
+Brand features private attribute name of type string
+Brand features private attribute nationality of type string
+
+Car extends WheeledVehicle
+Car has 1 Engine by composition 
+
+Engine features private attribute horsePower of type double
+Engine features public operation start of type void
+Engine features public operation stop of type void
+Engine features private operation changeOil of type boolean expecting int
+
+Motorcycle extends WheeledVehicle
+
+Plane features private attribute capacity of type int
+Plane extends Vehicle
+Plane has 1..n Engine by composition 
+
+Vehicle features private attribute year of type string
+Vehicle features private attribute model of type string
+Vehicle has 1 Brand by aggregation build
+
+Wheel features private attribute size of type double
+
+WheeledVehicle extends Vehicle
+WheeledVehicle has n Wheel by composition 
+
